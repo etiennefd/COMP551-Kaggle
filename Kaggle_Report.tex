@@ -11,11 +11,11 @@
 
 \title{Kaggle Competition: Find the ``Largest'' Digit\\
 {\large COMP 551-001, March 2018\\}
-{\Large Team [Team Name]}
+{\Large Team Axolotl}
 }
 
 \author{\IEEEauthorblockN{Haohan Bo}
-\IEEEauthorblockA{[McGill ID] \\
+\IEEEauthorblockA{260782229 \\
 haohan.bo@mail.mcgill.ca}
 \and
 \IEEEauthorblockN{Étienne Fortier-Dubois}
@@ -42,6 +42,16 @@ Briefly describe the problem and summarize your approach and results.
 
 Describe and justify your pre-processing methods, and how you designed and selected your features.
 
+\subsection{Pre-processing}
+
+Binarize images, isolate digits, find the largest one, remove the rest of the image, pad with black pixels ans resize. 
+
+Isolate digits: one issue is that sometimes digits partially overlap. Separating these digits is a difficult problem. We have ignored it, because such cases are rare. 
+
+To determine the largest digit, we found the one that had the largest dimension, for either of the width and height. This approach proved superior to using the area (width $\times$ height), as we found that images were classified according to the tallest or widest digit even though another digit may have had a larger total area. 
+
+
+
 \section{Algorithms}
 
 Give an overview of the learning algorithms used without going into too much detail in the class notes (e.g. SVM derivation, etc.), unless necessary to understand other details.
@@ -59,7 +69,7 @@ Include any decisions about training/validation split, dis- tribution choice for
 
 \section{Results}
 
-Present a detailed analysis of your results, including graphs and tables as appropriate. This analysis should be broader than just the Kag- gle result: include a short comparison of the most important hyperparam- eters and all 3 methods you implemented.
+Present a detailed analysis of your results, including graphs and tables as appropriate. This analysis should be broader than just the Kaggle result: include a short comparison of the most important hyperparam- eters and all 3 methods you implemented.
 
 % Commented out table and figure from the IEEE template: 
 
